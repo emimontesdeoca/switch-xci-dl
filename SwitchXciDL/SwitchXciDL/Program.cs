@@ -14,7 +14,7 @@ namespace SwitchXciDL
         static void Main(string[] args)
         {
             var url = "https://switch-xci.com/all-switch-xci-torrents-new-link-updt";
-            var destination = @"";
+            var destination = @"C:\Users\emimo\Desktop\Switch torrents";
             var torrentList = new Dictionary<string, string>();
 
             Console.WriteLine($"Starting SwithcXciDL");
@@ -56,6 +56,7 @@ namespace SwitchXciDL
                     {
                         string destinationPath = Path.Combine(destination, item.Value);
                         wc.DownloadFile(item.Key, destinationPath);
+                        Console.WriteLine($"Downloaded: {item.Value}");
                         dlCounter++;
                     }
                     catch
